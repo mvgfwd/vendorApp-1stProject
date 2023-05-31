@@ -1,0 +1,30 @@
+.bgsidebar{
+    background-image: url(../../assets/image/5328478.jpg);
+    background-size: cover;
+    border-right: 1px solid #ccc;
+    /* box-shadow: 2px 2px 2px #ccc; */
+}
+
+.sidebarisi{
+    background-color: rgba(255, 255, 255, 0.692);
+}
+
+.list-sidebar{
+    border-bottom: 1px solid #ccc;
+    border-radius:3px;
+    padding-left: 8px;
+    display: flex;
+}
+
+.list-sidebar > hero-icon{
+    /* border: 1px solid red; */
+    margin-top: 5px;
+    margin-right:6px;
+}
+.list-sidebar:hover{
+    color:white;
+}
+
+.solidSidebarText{
+    color:white
+}

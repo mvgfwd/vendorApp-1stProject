@@ -1,0 +1,22 @@
+<div class="form-control">
+    <div class="flex flex-row items-center justify-between">
+        <div class="flex flex-col items-left">
+            <label
+            [@labelMove]="labelState" 
+            [ngClass]=""
+            class="font-jakarta flex text-md" 
+            [for]="idInput" 
+            *ngIf="label">{{label}}</label>
+
+            <input 
+            [ngClass]="focusOrNoClass"
+            (focus)="onFocus()"
+            (blur)="onBlur()"
+            (input)="inputValLen($event)"
+            [type]="inputType" 
+            [id]="idInput"
+            [formControl]="control"
+            class="px-2 py-1 border-2 border-gray-300 bg-gray-100 rounded-md ">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div [class]="'pt-3'" [hidden]="!active">
+  <ng-content></ng-content>
+
+  {{ template }}
+  <ng-container *ngIf="template"
+    [ngTemplateOutlet]="template"
+    [ngTemplateOutletContext]="{ person: dataContext }"
+  >
+  </ng-container>
+</div>

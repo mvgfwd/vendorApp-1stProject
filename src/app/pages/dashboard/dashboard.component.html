@@ -1,0 +1,19 @@
+<div id="ngetes aja" class="flex flex-col">
+    <!-- button -->
+    <app-button color="primary" size="medium">Submit</app-button>
+    <app-button color="secondary" size="medium">Submit v2</app-button>
+    <app-button color="warning" size="medium">Warning</app-button>
+    <app-button color="error" size="medium">Error</app-button>
+    <app-button color="success" size="medium">Tertiary</app-button>
+
+    <!-- input -->
+    <app-input inputType="text" idInput="test123" label="Test Label" ></app-input>
+
+    <!-- modal -->
+    <app-modal 
+    *ngIf="showModal" 
+    (click)="showModal=false"
+    message="Message from Dashboard"
+    title="title from Dashboard"></app-modal>
+    <button (click)="modalOn()" class="w-20" style="border:1px solid red;">Modal</button>
+  </div>

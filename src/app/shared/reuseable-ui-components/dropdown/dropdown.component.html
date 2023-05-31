@@ -1,0 +1,31 @@
+<div class="form-control">
+  <div class="flex flex-row items-center justify-between">
+    <label [for]="id" *ngIf="label" class="font-jakarta text-sm"
+      >{{ label }}
+      <span class="ml-2 text-xs font-light" *ngIf="description"
+        >( Desc. : {{ description }} )</span
+      ></label
+    >
+    <hero-icon
+      *ngIf="control.invalid && control.dirty && control.touched"
+      name="x-circle"
+      class="h-4 w-4 cursor-pointer fill-tms-error-600 text-white"
+    ></hero-icon>
+    <hero-icon
+      *ngIf="control.valid && validator"
+      name="check-circle"
+      class="h-4 w-4 cursor-pointer fill-tms-green-500 text-white"
+    ></hero-icon>
+  </div>
+  <select
+    [formControl]="control"
+    [id]="id"
+    [name]="id"
+    [ngClass]="size"
+    class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full "
+  >
+    <option *ngFor="let dropdown of dropdowns" [value]="dropdown.id">
+      {{ dropdown.name }}
+    </option>
+  </select>
+</div>

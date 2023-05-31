@@ -1,0 +1,7 @@
+.ng-touched.ng-dirty.ng-invalid {
+    border: 1px solid #AD1F2B;
+}
+
+.ng-valid {
+    border: 1px solid #84bd00;
+}

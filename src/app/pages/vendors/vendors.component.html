@@ -1,0 +1,46 @@
+<div class="bg-white pl-4 pb-7 pr-4 shadow-md">
+    <div class="flex flex-col text-left ">
+      <span class="text-3xl font-semibold my-3">List GMFs Vendors</span>
+      <span class="w-[100%] h-7 bg-blue-700 mb-3"></span>
+      <span class="text-left text-md">Berikut adalah Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi</span>
+    </div>
+    <div  class="mt-3 w-[50%] ml-[25%]" style="border-bottom: 1px dashed #afafaf"></div>
+
+    <!-- table -->
+    <span class="mt-5 mb-3 flex justify-center font-semibold text-md">Listnya!</span>
+    <div class=" flex flex-col justify-center">
+      <div class=" justify-center grid grid-cols-12">
+        <div class="col-start-4 col-end-5 border-b-2 border-t-2 border-l-2 border-stone-900">
+          <span class="flex justify-center font-semibold ">No.</span>
+        </div>
+        <div class="col-start-5 col-end-7 border-b-2 border-t-2 border-l-2 border-stone-900">
+          <span class="flex justify-center font-semibold">Nama</span>
+        </div>
+        <div class="col-start-7 col-end-8 border-b-2 border-t-2 border-l-2 border-stone-900">
+          <span class="flex justify-center font-semibold">Total</span>
+        </div>
+        <div class="col-start-8 col-end-10 border-2 border-stone-900">
+          <span class="flex justify-center font-semibold">Action</span>
+        </div>
+      </div>
+      <!-- Isian data -->
+      <div class="justify-center grid grid-cols-12" *ngFor="let list of dummy; let i = index">
+        <div class="flex flex-col col-start-4 col-end-5 border-b-2 border-l-2 border-stone-500" [ngClass]="i % 2 == 0 ? 'genap':'ganjil'">
+          <span class="flex justify-center py-1">{{list.id}}</span>
+        </div>
+        <div class="flex flex-col col-start-5 col-end-7 border-b-2 border-l-2 border-stone-500" [ngClass]="i % 2 == 0 ? 'genap':'ganjil'">
+          <span class="flex justify-center py-1">{{list.name}}</span>
+        </div>
+        <div class="flex flex-col col-start-7 col-end-8 border-b-2 border-l-2 border-stone-500" [ngClass]="i % 2 == 0 ? 'genap':'ganjil'">
+          <span class="flex justify-center py-1">{{list.total}}</span>
+        </div>
+        <div class="flex flex-col col-start-8 col-end-10 border-b-2 border-l-2 border-r-2 border-stone-400" [ngClass]="i % 2 == 0 ? 'genap':'ganjil'">
+          <div class="flex justify-evenly py-1">
+            <app-button color="primary" size="medium">Check</app-button>
+            <app-button (click)="onDelete(i)" color="error" size="medium">Delete</app-button>
+            <!-- <button class="rounded-md bg-green-500 px-1.5 text-white">Check</button>
+            <button class="rounded-md bg-red-500 px-1.5 text-white">Delete</button></div> -->
+        </div>
+      </div>
+    </div>
+  </div>
