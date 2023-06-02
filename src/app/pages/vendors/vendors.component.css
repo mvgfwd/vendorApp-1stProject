@@ -1,7 +1,29 @@
 .genap{
-    background-color: rgba(0, 0, 0, 0.18);
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 .ganjil{
-    background-color: rgba(255, 255, 255, 0.18);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.thead{
+    background-color: #83bf41;
+    border-top:1px solid #2f3138;
+    border-left:1px solid #2f3138;
+    border-bottom:1px solid #2f3138;
+}
+
+.thead-end{
+    border-right:1px solid #2f3138;
+
+}
+
+.list-data{
+    height:100px;
+    overflow:auto;
+    float: left;
+}
+
+.list-vendors:hover{
+    background-color: rgb(0, 0, 0);
 }

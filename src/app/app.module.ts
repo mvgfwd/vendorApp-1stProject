@@ -15,6 +15,8 @@ import { AppRoutingModules } from './app-routing.module';
 import { InputComponent } from './shared/reusable-ui-2/input/input.component';
 import { ButtonComponent } from './shared/reusable-ui-2/button/button.component';
 import { ModalComponent } from './shared/reusable-ui-2/modal/modal.component';
+import { VendorFormComponent } from './pages/vendors/vendor-form/vendor-form.component';
+import { VendorsService } from './pages/vendors/vendors.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { ModalComponent } from './shared/reusable-ui-2/modal/modal.component';
     DashboardComponent,
     InputComponent,
     ButtonComponent,
-    ModalComponent
+    ModalComponent,
+    VendorFormComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { ModalComponent } from './shared/reusable-ui-2/modal/modal.component';
     BrowserAnimationsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [VendorsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

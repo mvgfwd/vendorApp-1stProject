@@ -3,11 +3,16 @@ import {Routes, RouterModule} from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { VendorsComponent } from './pages/vendors/vendors.component';
 import { UsersComponent } from './pages/users/users.component';
+import { VendorFormComponent } from './pages/vendors/vendor-form/vendor-form.component';
 
 const routes: Routes = [
-    {path: '', component: DashboardComponent,pathMatch:'full'},
-    {path: 'vendors', component: VendorsComponent,pathMatch:'full'},
-    {path: 'users', component: UsersComponent,pathMatch:'full'},
+    {path: '', redirectTo: '/dashboard', pathMatch:'full'},
+    {path: 'dashboard', component: DashboardComponent},
+    {path: 'vendors', children:[
+        {path:'', component: VendorsComponent },
+        {path:'add', component:VendorFormComponent, title: 'Add Vendor'},
+    ]},
+    {path: 'users', component: UsersComponent},
 ]
 
 @NgModule({

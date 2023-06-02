@@ -1,0 +1,11 @@
+.outlineButt{
+    outline-style: solid;
+    outline-color:#008080;
+    outline-offset: 0;
+    outline-width: thin;
+    color: #008080
+}
+
+.outlineButt:hover{
+    outline-color:#006298
+}

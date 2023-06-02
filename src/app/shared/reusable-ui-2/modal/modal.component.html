@@ -1,6 +1,6 @@
 <div class="backdrop" (click)="closeModal()"></div>
 <div class="modal-box flex flex-col">
-    <span class="font-semibold">{{title ? title : 'Title'}}</span> <hr>
+    <span class="font-semibold">{{title ? title : 'Title'}}</span> <hr style="border:1px solid #006398de;">
     <span>{{message ? message : 'Isian Modal'}}</span>
     <div class="flex justify-end">
         <app-button color="secondary" (click)="closeModal()">Okay</app-button>

@@ -1,12 +1,12 @@
 <div class="flex flex-row z-10">
-    <div class="flex flex-col w-11 h-screen bg-green-600 items-center solidsidebar z-20" (mouseenter)="onMouseEnter()">
+    <div  class="flex flex-col w-12 h-screen items-center solidsidebar z-20" (mouseenter)="onMouseEnter()">
         <img src="../../assets/image/gmf-nobg.png"  alt="GMF AeroAsia" class="mt-4 mr-1">
         <div class="flex flex-col text-blue-200 font-semibold text-md mt-[20vh]" *ngIf="sidebarExtend" [@showHide3]>
             <span>V</span><span>E</span><span>N</span><span>D</span><span>O</span><span>R</span><span>-</span><span>A</span><span>P</span><span>P</span>
         </div>
     </div>
 
-    <div class="absolute z-30 flex flex-col mt-[28vh] ml-3" >
+    <div class="absolute z-30 flex flex-col pt-[28vh] ml-3.5">
         <hero-icon 
         [@showHide]
         *ngIf="heroiconSolid"
@@ -21,21 +21,25 @@
     
     <div 
     (mouseleave)="onMouseLeave()"
-    class="h-screen bgsidebar absolute ml-11 z-10" 
+    class="h-screen bgsidebar absolute ml-12 z-10 w-[180px]" 
     *ngIf="sidebarExtend" 
     [@showHide2]>
     <div class="sidebarisi h-screen">
-        <div class="sidebarisi flex justify-center mb-2 cursor-pointer" routerLink="">
-            <img src="https://upload.wikimedia.org/wikipedia/en/0/02/Stewie_Griffin.png" style="max-width: 180px;max-height: 180px;" alt="Vendors Management">
+        <div routerLink="/dashboard" class="sidebarisi flex justify-center cursor-pointer">
+            <img 
+            src="https://upload.wikimedia.org/wikipedia/en/0/02/Stewie_Griffin.png" 
+            style="max-width: 180px;max-height: 180px;" 
+            alt="Vendors Management"
+            class="fixed">
         </div>
         <div class="flex justify-center">
             <div class="flex flex-col w-[95%]">
-                <div  class="list-sidebar hover:bg-blue-700 p-1 pb-2 cursor-pointer text-stone-950 hover:font-semibold"
+                <div  class="list-sidebar p-1 pb-2 cursor-pointer text-stone-950 hover:font-semibold mt-[28vh]" 
                     routerLink="/vendors">
                     <hero-icon name="globe-alt" class="h-5 w-5"></hero-icon>
                     Vendor List
                 </div>
-                <div  class="list-sidebar hover:bg-blue-600 p-1 pb-2 cursor-pointer text-stone-950 hover:font-semibold"
+                <div  class="list-sidebar p-1 pb-2 cursor-pointer text-stone-950 hover:font-semibold"
                     routerLink="/users">
                     <hero-icon name="users" class="h-5 w-5"></hero-icon>
                     User

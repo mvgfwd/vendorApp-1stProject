@@ -5,6 +5,10 @@
     /* box-shadow: 2px 2px 2px #ccc; */
 }
 
+.solidsidebar{
+    background-color: #006298;
+}
+
 .sidebarisi{
     background-color: rgba(255, 255, 255, 0.692);
 }
@@ -23,6 +27,7 @@
 }
 .list-sidebar:hover{
     color:white;
+    background-color:#006298
 }
 
 .solidSidebarText{
