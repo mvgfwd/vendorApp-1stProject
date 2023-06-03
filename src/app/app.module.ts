@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {allIcons, HeroIconModule} from 'ng-heroicon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule, FormsModule} from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from '../ui/sidebar/sidebar.component';
@@ -17,6 +17,7 @@ import { ButtonComponent } from './shared/reusable-ui-2/button/button.component'
 import { ModalComponent } from './shared/reusable-ui-2/modal/modal.component';
 import { VendorFormComponent } from './pages/vendors/vendor-form/vendor-form.component';
 import { VendorsService } from './pages/vendors/vendors.service';
+import { VendorDetailComponent } from './pages/vendors/vendor-detail/vendor-detail.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { VendorsService } from './pages/vendors/vendors.service';
     InputComponent,
     ButtonComponent,
     ModalComponent,
-    VendorFormComponent
+    VendorFormComponent,
+    VendorDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { VendorsService } from './pages/vendors/vendors.service';
     ),
     AppRoutingModules,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [VendorsService],
   bootstrap: [AppComponent]

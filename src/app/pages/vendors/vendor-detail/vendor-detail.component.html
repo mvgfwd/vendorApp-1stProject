@@ -1,0 +1,33 @@
+<div class=" bg-white pl-4 pb-7 pr-4 shadow-md" [@detailAnimate] >
+    <span class="py-2 flex justify-center font-semibold text-md">Vendors Detail</span>
+    <div class="flex items-center justify-evenly" style="height: 50px;">
+        <img [src]="detailVendor.imgPath" [alt]="detailVendor.name" *ngIf="detailVendor.imgPath" style="max-width: 80px; max-height: 80px;object-fit: contain;" >
+        <span class="flex font-semibold align-middle underline" *ngIf="detailVendor.name">{{detailVendor.name}} </span>
+    </div>
+    <div class="grid grid-cols-9" style="border-bottom: 1px solid rgba(51, 255, 0, 0.521);">
+      <span class="col-start-1 col-end-2 font-semibold">Address</span>
+      <span class="col-start-3 ">:</span>
+      <span class="col-start-4 col-end-10">{{detailVendor.address}}</span>
+    </div>
+    <div class="grid grid-cols-9" style="border-bottom: 1px solid rgba(51, 255, 0, 0.521);">
+      <span class="col-start-1 col-end-2 font-semibold">Email</span>
+      <span class="col-start-3 ">:</span>
+      <span class="col-start-4 col-end-10">{{detailVendor.email}}</span>
+    </div>
+    <div class="grid grid-cols-9" style="border-bottom: 1px solid rgba(51, 255, 0, 0.521);">
+      <span class="col-start-1 col-end-2 font-semibold">Phone</span>
+      <span class="col-start-3 ">:</span>
+      <span class="col-start-4 col-end-10">{{detailVendor.phone}}</span>
+    </div>
+    <div class="grid grid-cols-9" style="border-bottom: 1px solid rgba(51, 255, 0, 0.521);">
+      <span class="col-start-1 col-end-2 font-semibold">Total</span>
+      <span class="col-start-3 ">:</span>
+      <span class="col-start-4 col-end-10">{{detailVendor.total}}</span>
+    </div>
+    <div class="justify-center grid grid-cols-9 mt-5">
+        <app-button 
+        color="secondary" 
+        class="flex flex-col col-start-8 col-end-10"
+        routerLink="add">Edit</app-button>
+      </div>
+  </div>

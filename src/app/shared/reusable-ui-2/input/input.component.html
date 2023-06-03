@@ -9,12 +9,14 @@
             *ngIf="label">{{label}}</label>
 
             <input 
-            [ngClass]="focusOrNoClass"
+            [ngClass]="focusOrNoClass + inputType == 'number'? inputNumClass: ''"
+            [ngClass]="invalidTerm ? 'invalidInput':''"
             (focus)="onFocus()"
             (blur)="onBlur()"
             (input)="inputValLen($event)"
             [type]="inputType" 
             [id]="idInput"
+            (invalid)="invalidTerm"
             [formControl]="control"
             class="h-[38px] px-3 py-1 border-2 border-gray-300 bg-gray-100 rounded-md ">
         </div>

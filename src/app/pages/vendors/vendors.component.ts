@@ -32,7 +32,6 @@ export class VendorsComponent implements OnInit {
   }
 
   showDetail(idx:any){
-    console.log(idx)
   }
 
 }

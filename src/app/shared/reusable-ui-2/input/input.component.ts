@@ -33,8 +33,10 @@ export class InputComponent {
     'text';
     @Input() idInput:string ='';
     @Input() control = new FormControl();
+    @Input() invalidTerm:boolean = false;
     
     labelState = 'onInput';
+    inputNumClass = 'inputTypeNumber'
     
     //menghitung length input value untuk animasi input
     inputValue:any;

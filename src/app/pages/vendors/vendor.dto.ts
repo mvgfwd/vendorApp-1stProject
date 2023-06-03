@@ -4,5 +4,6 @@ export class VendorDTO{
                 public total:number,
                 public email:string,
                 public address:string,
-                public phone:string){}
+                public phone:string,
+                public imgPath?:string){}
 }

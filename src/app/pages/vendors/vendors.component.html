@@ -10,9 +10,9 @@
 </div>
 
     <!-- table & detail -->
-    <div class="flex flex-row justify-between mt-4">
-      <div class=" bg-white pl-4 pb-7 pr-4 shadow-md w-[66%] ">
-        <span class="my-2 flex justify-center font-semibold text-md">Listnya!</span>
+    <div class="flex flex-row justify-between mt-4" >
+      <div class=" bg-white pl-4 pb-7 pr-4 shadow-md w-[64%] ">
+        <span class="py-2 flex justify-center font-semibold text-md">Listnya!</span>
         <div class=" justify-center grid grid-cols-12">
           <div class="thead col-start-1 col-end-2">
             <span class="flex justify-center font-semibold ">No.</span>
@@ -28,28 +28,33 @@
           </div>
         </div>
         <!-- Isian data -->
-          <div class="list-vendors justify-center grid grid-cols-12" *ngFor="let list of dummy; let i = index" (click)="showDetail(i)">
-            <div class="flex flex-col justify-center col-start-1 col-end-2 " [ngClass]="i % 2 == 0 ? 'genap':'ganjil'">
-              <span class="flex justify-center py-1">{{list.id}}</span>
-            </div>
-            <div class="flex flex-col justify-center col-start-2 col-end-7" [ngClass]="i % 2 == 0 ? 'genap':'ganjil'">
-              <span class="flex justify-center  py-1">{{list.name}}</span>
-            </div>
-            <div class="flex flex-col justify-center col-start-7 col-end-8 " [ngClass]="i % 2 == 0 ? 'genap':'ganjil'">
-              <span class="flex justify-center py-1">{{list.total}}</span>
-            </div>
-            <div class="flex flex-col col-start-8 col-end-13" [ngClass]="i % 2 == 0 ? 'genap':'ganjil'">
-              <div class="flex justify-evenly py-1">
-                <div *ngIf="action !== i">
-                  <app-button color="outline" (click)="onAct=i; kliked()">Actions</app-button>
-                </div>
-                <div class="flex flex-row" *ngIf="action===i">              
-                  <app-button color="primary"  class="mr-1 " round="large">Check</app-button>
-                  <app-button (click)="onDelete(i)" color="error" round="large" class="ml-1">Delete</app-button>
+          <div class="skroll-data h-[25vh] overflow-auto">
+            <div class="list-vendors justify-center grid grid-cols-12" 
+                *ngFor="let list of dummy; let i = index" 
+                (click)="showDetail(i)"
+                [routerLink]="[i]">
+              <div class="flex flex-col justify-center col-start-1 col-end-2 " [ngClass]="i % 2 == 0 ? 'genap':'ganjil'">
+                <span class="flex justify-center py-1">{{list.id}}</span>
+              </div>
+              <div class="flex flex-col justify-center col-start-2 col-end-7" [ngClass]="i % 2 == 0 ? 'genap':'ganjil'">
+                <span class="flex justify-center  py-1">{{list.name}}</span>
+              </div>
+              <div class="flex flex-col justify-center col-start-7 col-end-8 " [ngClass]="i % 2 == 0 ? 'genap':'ganjil'">
+                <span class="flex justify-center py-1">{{list.total}}</span>
+              </div>
+              <div class="flex flex-col col-start-8 col-end-13" [ngClass]="i % 2 == 0 ? 'genap':'ganjil'">
+                <div class="flex justify-evenly py-1">
+                  <div *ngIf="action !== i">
+                    <app-button color="outline" (click)="onAct=i; kliked()">Actions</app-button>
+                  </div>
+                  <div class="flex flex-row" *ngIf="action===i">              
+                    <app-button color="primary"  class="mr-1 " round="large">Check</app-button>
+                    <app-button (click)="onDelete(i)" color="error" round="large" class="ml-1">Delete</app-button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div> 
+            </div> 
+          </div>
         <div class="justify-center grid grid-cols-12 mt-5">
           <app-button 
           color="secondary" 
@@ -57,36 +62,10 @@
           routerLink="add" (click)="toForm()">Add</app-button>
         </div>
       </div>
-      <div class=" bg-white pl-4 pb-7 pr-4 shadow-md w-[32%]" >
-        <span class="my-2 flex justify-center font-semibold text-md">Vendors Detail</span>
-        <div class="grid grid-cols-9" style="border-bottom: 1px solid rgba(51, 255, 0, 0.521);">
-          <span class="col-start-1 col-end-2 font-semibold">Nama</span>
-          <span class="col-start-3 ">:</span>
-          <span class="col-start-4 col-end-10">Contoh Perusahaan TBK</span>
-        </div>
-        <div class="grid grid-cols-9" style="border-bottom: 1px solid rgba(51, 255, 0, 0.521);">
-          <span class="col-start-1 col-end-2 font-semibold">Address</span>
-          <span class="col-start-3 ">:</span>
-          <span class="col-start-4 col-end-10">Jl. Manasaja, Kota New York, Sumsel, Belgia</span>
-        </div>
-        <div class="grid grid-cols-9" style="border-bottom: 1px solid rgba(51, 255, 0, 0.521);">
-          <span class="col-start-1 col-end-2 font-semibold">Email</span>
-          <span class="col-start-3 ">:</span>
-          <span class="col-start-4 col-end-10">contoh@perusahaan.com</span>
-        </div>
-        <div class="grid grid-cols-9" style="border-bottom: 1px solid rgba(51, 255, 0, 0.521);">
-          <span class="col-start-1 col-end-2 font-semibold">Phone</span>
-          <span class="col-start-3 ">:</span>
-          <span class="col-start-4 col-end-10">021777777</span>
-        </div>
-        <div class="grid grid-cols-9" style="border-bottom: 1px solid rgba(51, 255, 0, 0.521);">
-          <span class="col-start-1 col-end-2 font-semibold">Total</span>
-          <span class="col-start-3 ">:</span>
-          <span class="col-start-4 col-end-10">10</span>
-        </div>
+    <!-- Detail -->
+      <div class="w-[35%]" >
+        <router-outlet></router-outlet>
       </div>
     </div>
-<!-- detail -->
-<router-outlet></router-outlet>
 
 

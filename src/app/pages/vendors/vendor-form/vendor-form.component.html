@@ -1,3 +1,22 @@
-<div class="bg-white pl-4 pb-7 pr-4 shadow-md my-3">
-    <app-input idInput="testing123"></app-input>
+<div class="bg-white pl-4 pb-7 pr-4 shadow-md">
+    <div class="flex flex-col text-left ">
+        <span class="text-3xl font-semibold my-3">Vendor Form</span>
+        <span class="w-[100%] h-8 mb-3" style="background-color: #006298;">
+          <span class="text-white ml-4 text-lg">Add/Edit Vendor Detail</span>
+        </span>
+        <span class="text-left text-md">Berikut adalah Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia </span>
+    </div>
+    <div>
+        <form (ngSubmit)="subOrEdit()">
+            <app-input [control]="theForm.controls.id" idInput="noid" label="No Id:" ></app-input>
+            <app-input [control]="theForm.controls.name" idInput="name" label="Vendor Name:" [invalidTerm]="theForm.controls.name.invalid && theForm.controls.name.touched"></app-input>
+            <app-input [control]="theForm.controls.address" idInput="addr" label="Vendor Address:"></app-input>
+            <app-input [control]="theForm.controls.email" idInput="mail" label="Vendor Email"></app-input>
+            <app-input [control]="theForm.controls.phone" idInput="phone" label="Vendor Phone"></app-input>
+            <app-input [control]="theForm.controls.total" idInput="total" label="Total Employee Channeled" inputType="number"></app-input>
+            <div class="text-center mt-4">
+                <app-button color="secondary" round="large" type="submit">Submit</app-button>
+            </div>
+        </form>
+    </div>
 </div>

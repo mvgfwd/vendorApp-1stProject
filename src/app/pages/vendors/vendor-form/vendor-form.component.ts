@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from '@angular/router'
 
 @Component({
@@ -8,13 +9,26 @@ import { Router } from '@angular/router'
 })
 
 export class VendorFormComponent implements OnInit{
-
-    url:any;
-
+    
     constructor(private router: Router){}
+    url:any;
+    theForm:any;
+
+    subOrEdit(){
+        console.log('form',this.theForm);
+        // this.router.navigate(['vendors'])
+    }
+
 
     ngOnInit(): void {
-        this.url = this.router.url
+        this.theForm = new FormGroup({
+            id: new FormControl(null),
+            name : new FormControl(null, Validators.required),
+            address : new FormControl(null),
+            email : new FormControl(null, Validators.email),
+            phone: new FormControl(null),
+            total: new FormControl(null)
+        })
     }
 
 }

@@ -1,9 +1,9 @@
 .genap{
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.10);
 }
 
 .ganjil{
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.00);
 }
 
 .thead{
@@ -25,5 +25,5 @@
 }
 
 .list-vendors:hover{
-    background-color: rgb(0, 0, 0);
+    background-color: #82bf416e;
 }
