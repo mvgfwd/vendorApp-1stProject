@@ -13,6 +13,7 @@ export class ButtonComponent implements OnInit{
     @Input() color: 'primary' | 'secondary' | 'warning' | 'error' | 'outline' | undefined = 'outline';
     @Input() disableCond: boolean = false;
     @Input() round: 'small' | 'medium' | 'large' | 'extra' | 'full' | 'extra-large' | undefined = 'full';
+    @Input() type:string='';
 
     //CSS Class
     sizeClass:string='';
@@ -49,7 +50,7 @@ export class ButtonComponent implements OnInit{
     setSize(): void{
         switch(this.size){
           case 'medium' : {
-              this.sizeClass = " px-3 h-8  py-2 text-sm w-auto ";
+              this.sizeClass = " px-3 h-8 py-2 text-sm w-auto ";
               // this.heroContainer = " mr-2 h-4 w-4 ";
             break
           }
@@ -74,27 +75,27 @@ export class ButtonComponent implements OnInit{
       setColor(): void {
         switch(this.color) {
           case 'primary': {
-            this.colorClass = "bg-green-700 hover:bg-green-300 hover:text-slate-700 ";
+            this.colorClass = "bg-ven-green-600 hover:bg-ven-green-700 hover:text-white ";
             this.heroStyle = " text-white hover:font-medium"
             break;
           }
           case 'secondary': {
-            this.colorClass = " bg-blue-500  hover:bg-blue-200 hover:text-slate-700 ";
+            this.colorClass = " bg-ven-blue-300  hover:bg-ven-blue-400 hover:text-white ";
             this.heroStyle = " text-white "
             break;
           }
           case 'warning': {
-            this.colorClass = " bg-yellow-500 hover:bg-yellow-100 font-jakarta hover:text-yellow-600 hover:border-yellow-500 ";
+            this.colorClass = " bg-yellow-400 font-jakarta hover:text-white hover:bg-yellow-500 ";
             this.heroStyle = " text-black "
             break;
           }
           case 'error': {
-            this.colorClass = " bg-red-600 hover:bg-red-200 hover:text-red-900";
+            this.colorClass = " bg-red-600 hover:bg-red-800";
             this.heroStyle = " text-white "
             break;
           }
           case 'outline': {
-            this.colorClass = "bg-white outlineButt hover:border-blue-500 hover:text-blue-600 hover:bg-blue-100 p-[-3px]";
+            this.colorClass = "bg-white outlineButt hover:border-ven-blue-300 hover:text-ven-blue-300 hover:bg-ven-blue-50 p-[-3px]";
             break;
           }
           default: {

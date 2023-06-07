@@ -1,11 +1,20 @@
 .outlineButt{
     outline-style: solid;
-    outline-color:#008080;
+    outline-color:#0D98BA;
     outline-offset: 0;
     outline-width: thin;
-    color: #008080
+    color: #0D98BA
 }
 
 .outlineButt:hover{
-    outline-color:#006298
+    outline-color:#0565FF;
+    color:#0565FF
+}
+
+button:disabled{
+    cursor:not-allowed;
+}
+
+button:disabled:hover{
+    color:white
 }

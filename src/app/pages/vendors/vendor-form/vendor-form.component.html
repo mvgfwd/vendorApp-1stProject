@@ -1,22 +1,54 @@
-<div class="bg-white pl-4 pb-7 pr-4 shadow-md">
-    <div class="flex flex-col text-left ">
-        <span class="text-3xl font-semibold my-3">Vendor Form</span>
-        <span class="w-[100%] h-8 mb-3" style="background-color: #006298;">
-          <span class="text-white ml-4 text-lg">Add/Edit Vendor Detail</span>
+<div class="bg-white pl-4 pb-1 mb-4 pr-4 shadow-md" [ngClass]="editing?'hidden':''">
+    <div class="flex flex-col text-left" [ngClass]="editing? 'py-4':'mb-6'">
+        <span class="text-3xl font-semibold my-3" *ngIf="!editing">Vendor Form</span>
+        <span class="w-[100%] mb-3" [ngClass]="editing?'h-7 text-center bg-ven-turq-700':'h-8 bg-ven-turq-800'">
+          <span class="text-white ml-4 text-lg" [ngClass]="editing?'text-md font-semibold':''" >{{editing? 'Edit' : 'Add'}} Vendor Detail</span>
         </span>
-        <span class="text-left text-md">Berikut adalah Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia </span>
-    </div>
-    <div>
-        <form (ngSubmit)="subOrEdit()">
-            <app-input [control]="theForm.controls.id" idInput="noid" label="No Id:" ></app-input>
-            <app-input [control]="theForm.controls.name" idInput="name" label="Vendor Name:" [invalidTerm]="theForm.controls.name.invalid && theForm.controls.name.touched"></app-input>
-            <app-input [control]="theForm.controls.address" idInput="addr" label="Vendor Address:"></app-input>
-            <app-input [control]="theForm.controls.email" idInput="mail" label="Vendor Email"></app-input>
-            <app-input [control]="theForm.controls.phone" idInput="phone" label="Vendor Phone"></app-input>
-            <app-input [control]="theForm.controls.total" idInput="total" label="Total Employee Channeled" inputType="number"></app-input>
-            <div class="text-center mt-4">
-                <app-button color="secondary" round="large" type="submit">Submit</app-button>
-            </div>
-        </form>
+        <span class="text-left text-md" *ngIf="!editing">Berikut adalah Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia </span>
     </div>
 </div>
+
+    <div class="flex flex-row justify-center shadow-lg bg-white p-4" [ngClass]="editing?' h-[400px] pb-2 overflow-auto':' pb-4'">
+        <div class="flex flex-col rounded-sm" [ngClass]="editing?'px-1 pt-1':' px-4 py-4'" 
+            [ngClass]="editing? 'w-[100%] h-max px-1':'w-3/4  mr-4'">
+            <form (ngSubmit)="subOrEdit()" class="" [ngClass]="editing?'px-1 pb-1 pt-2':'px-6 py-4 my-4'" style="border:2px solid #08596E">
+                <div class="flex rounded-md pt-2 py-4 mt-4 flex-col relative" style="border: 1px dotted #001D4D;" [ngClass]="editing?'px-2 mx-2':'mx-4 px-4'">
+                    <span class="absolute top-[-15px] ml-4 bg-white px-1 font font-semibold text-ven-turq-900">Vendor Info</span>
+                    <app-input [control]="theForm.controls.name" idInput="name" label="Vendor Name:" [invalidTerm]="theForm.controls.name.invalid && theForm.controls.name.touched"></app-input>
+                    <div *ngIf="theForm.controls.name.errors && theForm.controls.name.touched" class=" text-sm text-red-600 absolute ml-2 top-1 right-0 mr-6">Anjay Gurinjay</div>
+                    <app-input [control]="theForm.controls.address" idInput="addr" label="Vendor Address:" [invalidTerm]="theForm.controls.address.invalid && theForm.controls.address.touched"></app-input>
+                    <div *ngIf="theForm.controls.address.errors && theForm.controls.address.touched" class="ml-2 text-right text-sm text-red-600 absolute top-2 right-0 mr-6 mt-16">Anjay Gurinjay</div>
+                </div>
+                <div class="flex mt-4" [ngClass]="editing?'flex-col mt-0':''">
+                    <div class="flex rounded-md pt-2 py-4 flex-col relative mt-6" style="border: 1px dotted #001D4D;" [ngClass]="!editing?'w-1/2 px-4 mx-4':'px-2 mx-2'">
+                        <span class="absolute top-[-15px] ml-4 bg-white px-1 font font-semibold text-ven-turq-900">Vendor Contact</span>
+                        <app-input [control]="theForm.controls.email" idInput="mail" label="Vendor Email" [invalidTerm]="theForm.controls.email.invalid && theForm.controls.email.touched"></app-input>
+                        <div *ngIf="theForm.controls.email.errors && theForm.controls.email.touched" class=" text-right text-sm text-red-600 absolute ml-2 top-1 right-0 mr-6">Anjay Gurinjay</div>
+                        <app-input [control]="theForm.controls.phone" idInput="phone" label="Vendor Phone"></app-input>
+                    </div>
+                    <div class="flex rounded-md pt-2 py-4 flex-col relative mt-6" style="border: 1px dotted #001D4D;" [ngClass]="!editing?'w-1/2 px-4 mx-4':'px-2 mx-2'">
+                        <span class="absolute top-[-15px] ml-4 bg-white px-1 font font-semibold text-ven-turq-900">Data & Info</span>
+                        <app-input [control]="theForm.controls.total" idInput="total" label="Total Employee Channeled" inputType="number" [invalidTerm]="theForm.controls.total.invalid && theForm.controls.total.touched"></app-input>
+                        <div *ngIf="theForm.controls.total.errors && theForm.controls.total.touched" class=" text-right text-sm text-red-600 absolute ml-2 top-1 right-0 mr-6">Anjay Gurinjay</div>
+                        <app-input [control]="theForm.controls.imgpath" idInput="imgpath" label="URL - Image:" ></app-input>
+                    </div>
+                </div>
+                <div class="text-right mt-4 mb-2" [ngClass]="editing?'mr-2':'mr-4'">
+                    <app-button class="mr-2" color="outline" (click)="backToPrevPage()" round="large" type="button" >Back</app-button>
+                    <app-button color="primary" round="large" type="submit" [disableCond]="!theForm.valid">Submit</app-button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+        <!-- <div class="flex w-1/3 justify-evenly" *ngIf="!editing" >
+            <app-vendor-detail 
+            [addName]="theForm.controls.name.value"
+            [addAddress]="theForm.controls.address.value"
+            [addEmail]="theForm.controls.email.value"
+            [addPhone]="theForm.controls.phone.value"
+            [addTotal]="theForm.controls.total.value"
+            [addImgPath]="theForm.controls.imgpath.value"
+            ></app-vendor-detail>
+        </div> -->

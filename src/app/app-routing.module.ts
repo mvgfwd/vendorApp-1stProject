@@ -13,6 +13,7 @@ const routes: Routes = [
         {path:'add', component:VendorFormComponent, title: 'Add Vendor'},
         {path:'', component: VendorsComponent, children:[
             {path:':id', component: VendorDetailComponent},
+            {path:':id/edit', component: VendorFormComponent},
             ] 
         },
     ]},

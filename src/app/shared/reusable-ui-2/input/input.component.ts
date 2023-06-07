@@ -15,7 +15,8 @@ import { trigger, state, animate, transition, style } from '@angular/animations'
             })),
             state('onInput', style({
                 transform: 'translateY(8px) translateX(8px)',
-                backgroundColor: '#006298',
+                backgroundColor: '#0A7894',
+                fontSize: '15px',
                 color: 'white',
                 width: 'fit-content',
                 padding: ' 0 8px ',
@@ -34,6 +35,7 @@ export class InputComponent {
     @Input() idInput:string ='';
     @Input() control = new FormControl();
     @Input() invalidTerm:boolean = false;
+    @Input() invalidMessage:string = '';
     
     labelState = 'onInput';
     inputNumClass = 'inputTypeNumber'
@@ -48,8 +50,8 @@ export class InputComponent {
     focusOrNoClass:string = '';
 
     onFocus(){
+        this.focusOrNoClass = 'bg-white outline-0'
         this.labelState = 'overInput';
-        this.focusOrNoClass = 'bg-white outline-0 border-2 border-blue-500'
     }
     onBlur(){
         if(this.inputValue <= 0 || typeof this.inputValue === 'undefined' ? true : false){

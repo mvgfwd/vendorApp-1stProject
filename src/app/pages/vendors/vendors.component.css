@@ -1,20 +1,23 @@
 .genap{
-    background-color: rgba(0, 0, 0, 0.10);
-}
-
-.ganjil{
     background-color: rgba(255, 255, 255, 0.00);
 }
 
+.ganjil{
+    /* background-color: rgba(0, 0, 0, 0.10); */
+    background-color: #E2F8FD;
+
+}
+
 .thead{
-    background-color: #83bf41;
-    border-top:1px solid #2f3138;
-    border-left:1px solid #2f3138;
-    border-bottom:1px solid #2f3138;
+    background-color: #0A7894;
+    /* #83bf41 Hijau GMF */
+    border-top:1px solid #183314;
+    border-left:1px solid #183314;
+    border-bottom:1px solid #183314;
 }
 
 .thead-end{
-    border-right:1px solid #2f3138;
+    border-right:1px solid #183314;
 
 }
 
@@ -25,5 +28,5 @@
 }
 
 .list-vendors:hover{
-    background-color: #82bf416e;
+    background-color: #C6F0FB;
 }

@@ -25,4 +25,14 @@ export class VendorsService {
         this.vendors.splice(idx,1);
         this.vendorArrChanged.next(this.vendors)
     }
+
+    addVendor(newVendor:VendorDTO){
+        this.vendors.push(newVendor);
+        this.vendorArrChanged.next(this.vendors)
+    }
+
+    editVendor(idx:number, editedVendor:VendorDTO){
+        this.vendors[idx] = editedVendor;
+        this.vendorArrChanged.next(this.vendors)
+    }
 }

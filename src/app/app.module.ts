@@ -18,6 +18,8 @@ import { ModalComponent } from './shared/reusable-ui-2/modal/modal.component';
 import { VendorFormComponent } from './pages/vendors/vendor-form/vendor-form.component';
 import { VendorsService } from './pages/vendors/vendors.service';
 import { VendorDetailComponent } from './pages/vendors/vendor-detail/vendor-detail.component';
+import { VendorDetailService } from './pages/vendors/vendor-detail/vendor-detail.service';
+// import { VendorDetailModule } from './pages/vendors/vendor-detail/vendor-detail.module';
 
 @NgModule({
   declarations: [
@@ -46,9 +48,9 @@ import { VendorDetailComponent } from './pages/vendors/vendor-detail/vendor-deta
     AppRoutingModules,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [VendorsService],
+  providers: [VendorsService, VendorDetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

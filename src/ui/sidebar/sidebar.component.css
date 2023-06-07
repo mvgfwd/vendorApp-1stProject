@@ -1,12 +1,12 @@
 .bgsidebar{
     background-image: url(../../assets/image/5328478.jpg);
     background-size: cover;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #D3ECCF;
     /* box-shadow: 2px 2px 2px #ccc; */
 }
 
 .solidsidebar{
-    background-color: #006298;
+    background-color: #08596E;
 }
 
 .sidebarisi{
@@ -27,7 +27,7 @@
 }
 .list-sidebar:hover{
     color:white;
-    background-color:#006298
+    background-color:#0D98BA
 }
 
 .solidSidebarText{

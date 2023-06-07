@@ -1,33 +1,46 @@
-<div class=" bg-white pl-4 pb-7 pr-4 shadow-md" [@detailAnimate] >
-    <span class="py-2 flex justify-center font-semibold text-md">Vendors Detail</span>
-    <div class="flex items-center justify-evenly" style="height: 50px;">
-        <img [src]="detailVendor.imgPath" [alt]="detailVendor.name" *ngIf="detailVendor.imgPath" style="max-width: 80px; max-height: 80px;object-fit: contain;" >
-        <span class="flex font-semibold align-middle underline" *ngIf="detailVendor.name">{{detailVendor.name}} </span>
+<div class=" bg-white px-4 pb-6 shadow-md pt-4" style="border:1px solid #ccc" [@detailAnimate] >
+    <span class=" flex justify-center font-semibold text-md mb-2 text-white py-[1px] bg-ven-turq-700">Vendors Detail {{!editMode? 'Overview':''}}</span>
+    <div class="flex items-center justify-evenly mb-1" style="height: 50px;">
+        <div *ngIf="detailVendor?.imgPath">
+            <img [src]="detailVendor.imgPath" [alt]="detailVendor.name"  style="max-width: 80px; max-height: 80px;object-fit: contain;" >
+        </div>
+        <div *ngIf="addImgPath">
+            <img [src]="addImgPath" style="max-width: 80px; max-height: 80px;object-fit: contain;" >
+        </div>
+        <div class="" [ngClass]="editMode?'w-[fit-content]':''">
+            <span class="flex justify-center font-semibold align-middle underline break-all" *ngIf="detailVendor?.name">{{detailVendor.name}}</span>
+            <span class="flex justify-center font-semibold align-middle underline break-all" *ngIf="!editMode">{{addName?addName:'Nama Perusahaan Vendor'}}</span>
+        </div>
     </div>
-    <div class="grid grid-cols-9" style="border-bottom: 1px solid rgba(51, 255, 0, 0.521);">
-      <span class="col-start-1 col-end-2 font-semibold">Address</span>
+    <div class="grid grid-cols-9 mb-1" style="border-bottom: 1px solid #4FD2F3;">
+      <span class="col-start-1 col-end-3 font-semibold break-all">Address</span>
       <span class="col-start-3 ">:</span>
-      <span class="col-start-4 col-end-10">{{detailVendor.address}}</span>
+      <span class="col-start-4 col-end-10 break-all" *ngIf="editMode">{{detailVendor?.address}}</span>
+      <span class="col-start-4 col-end-10 break-all" *ngIf="!editMode">{{ addAddress ?addAddress:'Nama Perusahaan Vendor'}}</span>
     </div>
-    <div class="grid grid-cols-9" style="border-bottom: 1px solid rgba(51, 255, 0, 0.521);">
-      <span class="col-start-1 col-end-2 font-semibold">Email</span>
+    <div class="grid grid-cols-9 mb-1" style="border-bottom: 1px solid #4FD2F3;">
+      <span class="col-start-1 col-end-3 font-semibold break-all">Email</span>
       <span class="col-start-3 ">:</span>
-      <span class="col-start-4 col-end-10">{{detailVendor.email}}</span>
+      <span class="col-start-4 col-end-10 break-all" *ngIf="editMode">{{detailVendor?.email}}</span>
+      <span class="col-start-4 col-end-10 break-all" *ngIf="!editMode">{{ addEmail ?addEmail:'Email Vendor'}}</span>
     </div>
-    <div class="grid grid-cols-9" style="border-bottom: 1px solid rgba(51, 255, 0, 0.521);">
-      <span class="col-start-1 col-end-2 font-semibold">Phone</span>
+    <div class="grid grid-cols-9 mb-1" style="border-bottom: 1px solid #4FD2F3;">
+      <span class="col-start-1 col-end-3 font-semibold break-all">Phone</span>
       <span class="col-start-3 ">:</span>
-      <span class="col-start-4 col-end-10">{{detailVendor.phone}}</span>
+      <span class="col-start-4 col-end-10 break-all" *ngIf="editMode">{{detailVendor?.phone}}</span>
+      <span class="col-start-4 col-end-10 break-all" *ngIf="!editMode">{{ addPhone ?addPhone:'Phone Vendor'}}</span>
     </div>
-    <div class="grid grid-cols-9" style="border-bottom: 1px solid rgba(51, 255, 0, 0.521);">
-      <span class="col-start-1 col-end-2 font-semibold">Total</span>
+    <div class="grid grid-cols-9 mb-1" style="border-bottom: 1px solid #4FD2F3;">
+      <span class="col-start-1 col-end-3 font-semibold break-all">Total</span>
       <span class="col-start-3 ">:</span>
-      <span class="col-start-4 col-end-10">{{detailVendor.total}}</span>
+      <span class="col-start-4 col-end-10 break-all" *ngIf="editMode">{{detailVendor?.total}}</span>
+      <span class="col-start-4 col-end-10 break-all" *ngIf="!editMode">{{ addTotal ?addTotal:'Nama Perusahaan Vendor'}}</span>
     </div>
-    <div class="justify-center grid grid-cols-9 mt-5">
+    <div class="justify-center grid grid-cols-9 mt-5" *ngIf="editMode">
         <app-button 
         color="secondary" 
         class="flex flex-col col-start-8 col-end-10"
-        routerLink="add">Edit</app-button>
+        routerLink="edit"
+        (click)="editForm()">Edit</app-button>
       </div>
   </div>
