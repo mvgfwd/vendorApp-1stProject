@@ -2,7 +2,7 @@
     <span class=" flex justify-center font-semibold text-md mb-2 text-white py-[1px] bg-ven-turq-700">Vendors Detail {{!editMode? 'Overview':''}}</span>
     <div class="flex items-center justify-evenly mb-1" style="height: 50px;">
         <div *ngIf="detailVendor?.imgPath">
-            <img [src]="detailVendor.imgPath" [alt]="detailVendor.name"  style="max-width: 80px; max-height: 80px;object-fit: contain;" >
+            <img [src]="detailVendor.imgPath" [alt]="detailVendor.name"  style="width: 80px; height: 80px;object-fit: contain;" >
         </div>
         <div *ngIf="addImgPath">
             <img [src]="addImgPath" style="max-width: 80px; max-height: 80px;object-fit: contain;" >

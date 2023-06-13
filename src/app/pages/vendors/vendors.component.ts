@@ -3,6 +3,7 @@ import { VendorsService } from './vendors.service';
 import { trigger, animate, style, state, transition } from '@angular/animations';
 import { Router } from '@angular/router';
 import { VendorDetailService } from './vendor-detail/vendor-detail.service';
+import { UsersService } from '../users/users.service';
 
 @Component({
   selector: 'app-vendors',
@@ -27,19 +28,26 @@ export class VendorsComponent implements OnInit {
   //dummy vendors data
   constructor(private vendorSvc:VendorsService, 
               private router: Router,
-              private vendorDetSvc:VendorDetailService){}
+              private vendorDetSvc:VendorDetailService,
+              private usersSvc: UsersService){}
   dummy = this.vendorSvc.getVendors()
   ngOnInit(){
   }
   
-  onDelete(i:any){
-    this.vendorSvc.deleteVendor(i);
+  clg(){}
+
+  onDelete(i:number){
+    const vendorId = this.vendorSvc.getVendorId(i)
+    this.vendorSvc.deleteVendorById(vendorId); 
     this.action=undefined;
     let x = i;
     if(i<1){
       x = i+2;
     }
     this.router.navigate(['vendors/'+(x-1)])
+
+    //jika vendor didelete update ke user
+    this.usersSvc.loopChkVendor(vendorId)
 
   }
 

@@ -1,9 +1,72 @@
-<div class="bg-white pl-4 pb-7 pr-4 shadow-md">
-    <div class="flex flex-col text-left ">
-        <span class="text-3xl font-semibold my-3">User list of GMF's Vendors</span>
-        <span class="w-[100%] h-8 mb-3" style="background-color: #006298;">
-            <span class="text-white ml-4 text-lg">GMF User From Vendor Page</span>
-          </span>
-        <span class="text-left text-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ullam quo exercitationem dolorum atque, dicta perspiciatis facilis, nulla nisi eaque nesciunt aspernatur, assumenda repudiandae. Quia nisi velit repellat! Vel, magnam.</span>
+    <div class="bg-white pl-4 pb-7 pr-4 shadow-md">
+        <div class="flex flex-col text-left ">
+            <span class="text-3xl font-semibold my-3">User list of GMF's Vendors</span>
+            <span class="w-[100%] h-8 mb-3" style="background-color: #053E4C;">
+                <span class="text-white ml-4 text-lg">GMF User From Vendor Page</span>
+            </span>
+            <span class="text-left text-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ullam quo exercitationem dolorum atque, dicta perspiciatis facilis, nulla nisi eaque nesciunt aspernatur, assumenda repudiandae. Quia nisi velit repellat! Vel, magnam.</span>
+        </div>
+        <app-button color="error" (click)="clg()">Console</app-button>
     </div>
-</div>
+    <!-- table & detail -->
+    <div class="flex flex-row justify-between mt-4 h-[330px]" >
+        <div class="py-4 bg-white pl-4 pb-7 pr-4 shadow-md w-[69%]">
+            <!-- <span class="py-2 flex justify-center font-semibold text-md">Listnya!</span> -->
+            <div class=" justify-center grid grid-cols-12">
+                <div class="thead col-start-1 col-end-2">
+                    <span class="flex justify-center font-semibold text-white">Id.</span>
+                </div>
+                <div class="thead col-start-2 col-end-5">
+                    <span class="flex justify-center font-semibold text-white">Nama</span>
+                </div>
+                <div class="thead col-start-5 col-end-9">
+                    <span class="flex justify-center font-semibold text-white">Vendor Company</span>
+                </div>
+                <div class="thead thead-end col-start-9 col-end-13">
+                    <span class="flex justify-center font-semibold text-white">Action</span>
+                </div>
+            </div>
+            <!-- Isian data -->
+            <div class="skroll-data h-[25vh] overflow-auto">
+              <div 
+                class="list-vendors justify-center grid grid-cols-12" 
+                *ngFor="let user of users; let i = index;"
+                [ngClass]="i % 2 == 0 ? 'genap':'ganjil'"
+                (click)="getInfo(user.id)"
+                [routerLink]="[i]"
+                [@elAnimate]>
+                <div class="flex flex-col justify-center col-start-1 col-end-2 ">
+                  <span class="flex justify-center py-1">{{user.id}}</span>
+                </div>
+                <div class="flex flex-col justify-center col-start-2 col-end-5" >
+                    <span class="flex justify-center py-1 overflow-hidden whitespace-nowrap">{{user.name}}</span>
+                </div>
+                <div class="flex flex-col justify-center col-start-5 col-end-9 " >
+                    <!-- <span class="flex justify-center py-1">{{vendorName()}}</span> -->
+                    <span class="flex justify-center py-1">{{vendorNameById(user.vendorId)}}</span>
+                </div>
+                    <div class="flex flex-col col-start-9 col-end-13" >
+                        <div class="flex justify-evenly py-1">
+                            <div *ngIf="action !== i">
+                                <app-button color="outline" (click)="iAct=i;actKlik()">Actions</app-button>
+                            </div>
+                            <div class="flex flex-row" *ngIf="action === i">              
+                                <app-button color="secondary"  class="mr-1 " round="large">Edit</app-button>
+                                <app-button color="error" round="large" class="ml-1" (click)="deleteUserById(user.id)">Delete</app-button>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        <div class="justify-center grid grid-cols-12 mt-5">
+            <app-button 
+            color="secondary" 
+            class="flex flex-col col-start-11 col-end-13"
+            routerLink="add">Add</app-button>
+        </div>
+    </div>
+    <!-- Detail -->
+        <div class="w-[29%]">
+          <router-outlet></router-outlet>
+        </div>
+    </div>

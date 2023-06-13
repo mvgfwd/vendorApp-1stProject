@@ -1,0 +1,23 @@
+.thead{
+    background-color: #0A7894;
+    border-top:1px solid #183314;
+    border-left:1px solid #183314;
+    border-bottom:1px solid #183314;
+}
+
+.thead-end{
+    border-right: 1px solid #183314;
+}
+
+.genap{
+    background-color: rgba(255, 255, 255, 0.00);
+}
+
+.ganjil{
+    /* background-color: rgba(0, 0, 0, 0.10); */
+    background-color: #E2F8FD;
+}
+
+.list-vendors:hover{
+    background-color: #C6F0FB;
+}

@@ -45,7 +45,6 @@ export class VendorFormComponent implements OnInit, OnDestroy{
                 private location: Location){    }
     url:any;
     theForm:any;
-    addName='';
     editing = this.vendorDetSvc.editing;
     editingLocalStorage:string|null = localStorage.getItem('edit');
     indeks:number = 0;
@@ -125,7 +124,7 @@ export class VendorFormComponent implements OnInit, OnDestroy{
             phone = editingVendor?.phone;
             total = editingVendor?.total;
             imgpath = editingVendor?.imgPath;
-
+            
             this.theForm = new FormGroup({
                 name : new FormControl(name, Validators.required),
                 address : new FormControl(address, Validators.required),
@@ -135,7 +134,7 @@ export class VendorFormComponent implements OnInit, OnDestroy{
                 imgpath: new FormControl(imgpath),
             })
         }
-
+        
         if(!this.editing){
             this.theForm = new FormGroup({
                 name : new FormControl(null, Validators.required),
@@ -146,8 +145,8 @@ export class VendorFormComponent implements OnInit, OnDestroy{
                 imgpath: new FormControl(null),
             })
         }
-
+        console.log('vendor id,', editingVendor?.id)
     }
-
-
+    
+    
 }

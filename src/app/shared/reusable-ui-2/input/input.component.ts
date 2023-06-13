@@ -9,7 +9,6 @@ import { trigger, state, animate, transition, style } from '@angular/animations'
     animations: [
         trigger('labelMove', [
             state('overInput', style({
-                transform: 'translateY(0)',
                 width: 'fit-content',
                 fontSize: '14px',
             })),

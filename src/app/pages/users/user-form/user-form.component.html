@@ -1,0 +1,42 @@
+<div class="bg-white pl-4 pb-1 mb-2 pr-4 shadow-md">
+    <div class="flex flex-col text-left mb-6">
+        <span class="text-3xl font-semibold my-3">User Form</span>
+        <span class="w-[100%] mb-0 h-8 bg-ven-turq-800">
+          <span class="text-white ml-4 text-lg " >User Detail</span>
+        </span>
+    </div>
+    <div class="flex justify-center mb-4">
+        <div class="flex flex-row bg-white pl-6 pr-6 pb-4 pt-2 rounded-md w-5/6" style="border:2px solid #0A7894">
+            <form action="" class="w-[100%]" (ngSubmit)="console()">
+                <app-button color="primary" type="submit">Console</app-button>
+                <div class="flex">
+                    <div class="flex rounded-md pt-2  mt-4 flex-col relative pl-4 pr-6 pb-4 w-[55%] mr-[1%]" style="border: 1px dotted #001D4D;" >
+                        <span class="absolute top-[-15px] ml-4 bg-white px-1 font font-semibold text-ven-turq-900">User Info</span>
+                        <app-input [control]="userForm.controls.username" idInput="username" label="User Name:" ></app-input>
+                        <!-- <div *ngIf="theForm.controls.name.errors && theForm.controls.name.touched" class=" text-sm text-red-600 absolute ml-2 top-1 right-0 mr-6">Anjay Gurinjay</div> -->
+                        <app-input [control]="userForm.controls.address" idInput="addr" label="User Address:" ></app-input>
+                        <!-- <div *ngIf="theForm.controls.address.errors && theForm.controls.address.touched" class="ml-2 text-right text-sm text-red-600 absolute top-2 right-0 mr-6 mt-16">Anjay Gurinjay</div> -->
+                        <app-input [control]="userForm.controls.birth" idInput="addr" label="User birth:" ></app-input>
+                    </div>
+                    <div class="flex rounded-md pt-2  mt-4 flex-col relative pl-4 pr-6 pb-4 w-[43%] ml-[1%]" style="border: 1px dotted #001D4D;" >
+                        <span class="absolute top-[-15px] ml-4 bg-white px-1 font font-semibold text-ven-turq-900">User's Vendor</span>
+                        <app-input [control]="userForm.controls.vendorId" idInput="vendor" label="Vendor ID:" inputType="number"></app-input>
+                        <app-button color="outline" round="medium" class="flex justify-end mt-1 mb-2" type="button" (click)="toggleVendorModal()">Check Vendor ID</app-button>
+                        <app-modal title="Vendor ID" *ngIf="toggle" (click)="toggle=false;" [message]="modalMsg"></app-modal>
+                        <!-- <div *ngIf="theForm.controls.name.errors && theForm.controls.name.touched" class=" text-sm text-red-600 absolute ml-2 top-1 right-0 mr-6">Anjay Gurinjay</div> -->
+                        <app-input [control]="userForm.controls.role" idInput="role" label="Role: " class="" ></app-input>
+                        <!-- <div *ngIf="theForm.controls.address.errors && theForm.controls.address.touched" class="ml-2 text-right text-sm text-red-600 absolute top-2 right-0 mr-6 mt-16">Anjay Gurinjay</div> -->
+                    </div>
+                </div>
+                <div class="flex rounded-md pt-2  mt-6 flex-col relative pl-4 pr-6 pb-4 w-[100%]" style="border: 1px dotted #001D4D;" >
+                    <span class="absolute top-[-15px] ml-4 bg-white px-1 font font-semibold text-ven-turq-900">User's Contact</span>
+                    <app-input [control]="userForm.controls.email" idInput="email" label="Email:" ></app-input>
+                    <!-- <div *ngIf="theForm.controls.name.errors && theForm.controls.name.touched" class=" text-sm text-red-600 absolute ml-2 top-1 right-0 mr-6">Anjay Gurinjay</div> -->
+                    <app-input [control]="userForm.controls.phone" idInput="phone" label="Phone: " ></app-input>
+                    <!-- <div *ngIf="theForm.controls.address.errors && theForm.controls.address.touched" class="ml-2 text-right text-sm text-red-600 absolute top-2 right-0 mr-6 mt-16">Anjay Gurinjay</div> -->
+                    <app-input [control]="userForm.controls.imgUrl" idInput="imgurl" label="Image URL: " ></app-input>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

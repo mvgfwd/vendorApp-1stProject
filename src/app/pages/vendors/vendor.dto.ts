@@ -1,3 +1,5 @@
+import { UserDTO } from "../users/user.dto";
+
 export class VendorDTO{
     constructor(public id:number, 
                 public name:string, 
@@ -5,5 +7,6 @@ export class VendorDTO{
                 public email:string,
                 public address:string,
                 public phone:string,
-                public imgPath?:string){}
+                public imgPath?:string,
+                public user?:UserDTO[]){}
 }

@@ -19,6 +19,9 @@ import { VendorFormComponent } from './pages/vendors/vendor-form/vendor-form.com
 import { VendorsService } from './pages/vendors/vendors.service';
 import { VendorDetailComponent } from './pages/vendors/vendor-detail/vendor-detail.component';
 import { VendorDetailService } from './pages/vendors/vendor-detail/vendor-detail.service';
+import { UsersService } from './pages/users/users.service';
+import { UserDetailComponent } from './pages/users/user-detail/user-detail.component';
+import { UserFormComponent } from './pages/users/user-form/user-form.component';
 // import { VendorDetailModule } from './pages/vendors/vendor-detail/vendor-detail.module';
 
 @NgModule({
@@ -34,7 +37,9 @@ import { VendorDetailService } from './pages/vendors/vendor-detail/vendor-detail
     ButtonComponent,
     ModalComponent,
     VendorFormComponent,
-    VendorDetailComponent
+    VendorDetailComponent,
+    UserDetailComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,7 @@ import { VendorDetailService } from './pages/vendors/vendor-detail/vendor-detail
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [VendorsService, VendorDetailService],
+  providers: [VendorsService, VendorDetailService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
